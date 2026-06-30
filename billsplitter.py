@@ -2,15 +2,21 @@ running_total = 0
 
 num_of_friends = int(input('How many friends are splitting the bill? '))
 
-appetizers = float(input("Enter the cost of appetizers total: "))
-main_courses = float(input("Enter the cost of main courses total: "))
-desserts = float(input("Enter the cost of desserts total: "))
-drinks = float(input("Enter the cost of drinks total: "))
+
+def get_cost(cost):
+    return float(input(cost))
+
+
+appetizers = get_cost("Enter the cost of appetizers total: ")
+main_courses = get_cost("Enter the cost of main courses total: ")
+desserts = get_cost("Enter the cost of desserts total: ")
+drinks = get_cost("Enter the cost of drinks total: ")
 
 running_total += appetizers + main_courses + desserts + drinks
 print('Total bill so far:', running_total)
 
-tip_input = input('What percentage tip would you like to give? (e.g., 25 or 25%): ')
+tip_input = input(
+    'What percentage tip would you like to give? (e.g., 25 or 25%): ')
 tip_input = tip_input.replace('%', '')
 
 tip_percentage = float(tip_input)
